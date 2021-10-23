@@ -1,0 +1,135 @@
+body {
+    width: 90%;
+    color:#232323;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+}
+hr {
+    border: none;
+    background-color: #e6e6e6;
+    height: 1px; 
+    width:90%;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    outline: none;
+}
+a:link {
+    color: #232323;
+}
+a:visited {
+    color: #232323;
+}
+a:hover {
+    color:rgb(178, 186, 224);
+}
+header hr {
+    border: none;
+    background-color: rgba(138, 156, 231, 0.6);
+    height: 2px; 
+    width:95%;
+}
+.table {
+    padding: 20px 60px;
+    width: 100%;
+}
+.header-table {
+    height: 150px;
+    margin: 30px 0;
+    font-size: 1.2rem;
+    padding: 0 50px;
+    width: 100%;
+}
+.header-table h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+.header-table p {
+    margin-top: 10px;
+}
+.image {
+    width: 130px;
+    height: 125px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.user-photo {
+    width: 130px;
+    height: 145px;
+}
+.cell-center {
+    text-align: start;
+    padding-left: 20px;
+}
+.cell-right {
+    text-align: end;
+    padding: 0 20px 0 10px;
+}
+.cell-right a ion-icon{
+    font-size: 2rem;
+}
+.link-wrapper {
+    display: inline-block;
+    padding: 0 20px;
+}
+.section-header {
+    width: 20%;
+    text-align: center;
+    color: rgb(136, 153, 223);
+    font-style: italic;
+}
+.section-table {
+    font-size: 1.1rem;
+}
+.section-table .header {
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+.section-content {
+    padding-left: 40px;
+}
+.section-content span {
+    font-weight: bold;
+}
+.technical-list li:nth-child(1)::before {
+    content: "💻";
+    display: inline-block;
+    margin-right: 1rem;
+}
+.technical-list li:nth-child(2)::before {
+    content: "🛠";
+    display: inline-block;
+    margin-right: 1rem;
+}
+.technical-list li:nth-child(3)::before {
+    content: "🗣";
+    display: inline-block;
+    margin-right: 1rem;
+}
+.technical-list li:nth-child(4)::before {
+    content: "💡";
+    display: inline-block;
+    margin-right: 1rem;
+}
+.tecnical-section progress {
+    margin-right: 30px;
+}
+.expirience-section li::before { 
+    content: "🔹";
+    display: inline-block;
+    margin-right: 1rem;
+}
+.language-section li:nth-child(1)::before {
+    content: "🇺🇸";
+    display: inline-block;
+    margin-right: 1rem;
+}
+.language-section li:nth-child(2)::before {
+    content: "🇷🇺";
+    display: inline-block;
+    margin-right: 1rem;
+}
