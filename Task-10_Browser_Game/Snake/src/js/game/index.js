@@ -30,7 +30,7 @@
  // Игровой цикл — основной процесс, внутри которого будет всё происходить
  function loop() {
    requestAnimationFrame(loop);
-   if (++count < 4) {
+   if (++count < 8) {
      return;
    }
    count = 0;
