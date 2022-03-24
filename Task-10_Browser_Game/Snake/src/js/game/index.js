@@ -1,10 +1,12 @@
 import { SNAKE_START_POSITION,START_LENGTH,GRID_SIZE,APPLE_START_POSITION,SPEED_SNAKE } from "./Constants";
-
+import {Counter} from "./counter";
+import {Displayer} from "./displayer";
 // Поле, на котором всё будет происходить, — тоже как бы переменная
 var canvas = document.getElementById('game');
 // Классическая змейка — двухмерная, сделаем такую же
 var context = canvas.getContext('2d');
-
+const counter = new Counter();
+const displayer = new Displayer;
 
 var grid = GRID_SIZE;
 // Служебная переменная, которая отвечает за скорость змейки
@@ -35,12 +37,17 @@ function reloadGame() {
 	snake.dy = 0;
 	apple.x = getRandomInt(1, 18) * grid;
 	apple.y = getRandomInt(4, 18) * grid;
+  counter.resetScore();
+  displayer.updateScore(counter.getScore(),counter.getMaxScore());
+
   }
 // Делаем генератор случайных чисел в заданном диапазоне
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 // Игровой цикл — основной процесс, внутри которого будет всё происходить
+
+displayer.setScore(counter.getScore(), counter.getMaxScore());
 function loop() {
   requestAnimationFrame(loop);
   if (++count < 8) {
@@ -70,11 +77,15 @@ function loop() {
   context.fillStyle = 'red';
   context.drawImage(document.getElementById('food'), apple.x, apple.y, grid - 1, grid - 1);
   context.fillStyle = 'green';
+  
   snake.cells.forEach(function (cell, index) {
-	  
+	  context.drawImage(document.getElementById('food'), cell.x, cell.y, grid - 1, grid - 1);
     context.drawImage(document.getElementById('snake'), cell.x, cell.y, grid - 1, grid - 1);
     if (cell.x === apple.x && cell.y === apple.y) {
       snake.maxCells++;
+      counter.increaseScore(1);
+      counter.updateMaxScore();
+      displayer.updateScore(counter.getScore(),counter.getMaxScore());
 	  apple.x = getRandomInt(1, 18) * grid;
 	  apple.y = getRandomInt(4, 18) * grid;
     }
